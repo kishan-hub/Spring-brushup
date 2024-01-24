@@ -35,4 +35,9 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
   <bean id="allProjectRecords" class="com.spring.jdbc.demo.QueryForAllProjectRecords">
     <constructor-arg ref="jdbcTemplate"/>
   </bean>
+  
+  <bean id="pagiation" class="com.spring.jdbc.demo.ProjectDAOPagination">
+      <constructor-arg ref="jdbcTemplate"/>
+  </bean>
+  
  </beans>

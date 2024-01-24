@@ -21,7 +21,10 @@ public class App
 //        ProjectGetNoOfProject daOfProject=context.getBean("projectDAO",ProjectGetNoOfProject.class);
 //         daOfProject.getNoofProject();
         
-        QueryForAllProjectRecords records=context.getBean("allProjectRecords",QueryForAllProjectRecords.class);
-        records.getAllProjects();
+//        QueryForAllProjectRecords records=context.getBean("allProjectRecords",QueryForAllProjectRecords.class);
+//        records.getAllProjects();
+        
+        ProjectDAOPagination dao = context.getBean("pagiation",ProjectDAOPagination.class);
+        dao.getProjects(5, 1);
     }
 }
