@@ -1,0 +1,39 @@
+  <beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   
+   <bean   class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+     <property name="mappings">
+       <props>
+         <prop key="/register.htm">src</prop>
+       </props>
+     </property>
+   </bean>
+   
+     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+      <property name="basename" value="com/nt/validator/StCmdValidationErrors"/>
+  </bean>       
+  
+  <bean id="stValidator"  class="com.nt.validator.StudentInsertValidator"/>                   
+   
+ 
+ <bean id="src"  class="com.nt.controller.StudentRegistrationController">
+     <property name="formView" value="register"/>
+     <property name="validator"  ref="stValidator"/>
+     <property name="successView" value="register_result"/>
+     <property name="commandClass" value="com.nt.command.RegistrationCommand"/>
+     <property name="commandName" value="regCmd"/>
+     <property name="sessionForm" value="true"/>
+ </bean>
+ 
+
+   
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+   <property name="prefix"  value="/WEB-INF/pages/"/>
+   <property name="suffix"  value=".jsp"/>
+</bean> 
+
+
+</beans>

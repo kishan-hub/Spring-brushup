@@ -1,0 +1,4 @@
+com\annotation\app\AtAutoMain.class
+com\annotation\autowired\bean\Robot.class
+com\annotation\autowired\bean\Chip.class
+com\annotation\config\AtAutowiredConfig.class

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <!-- Controller -->
+ 
+  <!-- Handler Mapping -->
+  <bean 
+    class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="mappings">
+       <props>
+       <prop key="/add-journey.htm">adjsfc</prop>
+       </props>
+    </property>
+    </bean>
+    
+    <bean id="adjsfc" class="com.sfc.contoller.AddJourneySimpleFormController">
+     <property name="formView" value="add-journey"/>
+     <property name="commandClass" value="com.sfc.model.AddCriteria"/>
+     <property name="commandName" value="journey"/>
+    </bean>
+    
+   <!-- View Resolver -->
+   <bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	 <property name="basename" value="errors"/>
+	</bean>
+</beans>

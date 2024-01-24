@@ -1,0 +1,4 @@
+com\mapping\servlet\IOCContainerServlet.class
+com\mapping\demo\HandlerMapping.class
+com\mapping\dao\Categories.class
+com\mapping\demo\ViewHomeController.class

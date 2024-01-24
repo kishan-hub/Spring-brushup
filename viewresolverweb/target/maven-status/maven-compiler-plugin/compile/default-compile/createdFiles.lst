@@ -1,0 +1,4 @@
+com\vogo\controller\BikeController.class
+com\vogo\config\VogoWebMvcConfig.class
+com\vogo\dto\AppointmentDto.class
+com\vogo\controller\BookAppointmentController.class

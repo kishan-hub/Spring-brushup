@@ -1,0 +1,23 @@
+  <beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   
+   <bean   class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+     <property name="mappings">
+       <props>
+         <prop key="/welcome.htm">wc</prop>
+       </props>
+     </property>
+   </bean>
+   
+ 
+ <bean id="wc"  class="com.nt.controller.WelcomeController"/>
+
+<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+    <property name="location" value="/WEB-INF/views.xml"/>
+</bean> 
+
+
+</beans>
